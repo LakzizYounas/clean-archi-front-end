@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@clean-archi-front-end/counter/domain": [
+        "libs/counter/domain/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
