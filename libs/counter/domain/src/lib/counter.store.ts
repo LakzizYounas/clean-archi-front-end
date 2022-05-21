@@ -2,7 +2,7 @@ import type { Counter } from './counter.entity';
 
 export interface CounterStore {
   // State
-  coutner: Counter | undefined;
+  counter: Counter | undefined;
   isLoading: boolean;
   isUpdating: boolean;
 

@@ -17,6 +17,9 @@
     "paths": {
       "@clean-archi-front-end/counter/domain": [
         "libs/counter/domain/src/index.ts"
+      ],
+      "@clean-archi-front-end/counter/use-cases": [
+        "libs/counter/use-cases/src/index.ts"
       ]
     }
   },

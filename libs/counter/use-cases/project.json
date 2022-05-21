@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/counter/use-cases/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/counter/use-cases",
+        "main": "libs/counter/use-cases/src/index.ts",
+        "tsConfig": "libs/counter/use-cases/tsconfig.lib.json",
+        "assets": ["libs/counter/use-cases/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/counter/use-cases/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/counter/use-cases"],
+      "options": {
+        "jestConfig": "libs/counter/use-cases/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["use-cases"]
+}
