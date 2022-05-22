@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@clean-archi-front-end/counter/controller-react": [
+        "libs/counter/controller-react/src/index.ts"
+      ],
       "@clean-archi-front-end/counter/domain": [
         "libs/counter/domain/src/index.ts"
       ],

@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "counter-controller-react": "libs/counter/controller-react",
     "counter-domain": "libs/counter/domain",
     "counter-use-cases": "libs/counter/use-cases"
   }

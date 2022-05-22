@@ -1,0 +1,45 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/counter/controller-react/src",
+  "projectType": "library",
+  "tags": ["controller", "react"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/counter/controller-react",
+        "tsConfig": "libs/counter/controller-react/tsconfig.lib.json",
+        "project": "libs/counter/controller-react/package.json",
+        "entryFile": "libs/counter/controller-react/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/counter/controller-react/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/counter/controller-react/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/counter/controller-react"],
+      "options": {
+        "jestConfig": "libs/counter/controller-react/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
