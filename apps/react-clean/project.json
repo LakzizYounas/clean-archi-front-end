@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/react-clean/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/react-clean",
+        "index": "apps/react-clean/src/index.html",
+        "baseHref": "/",
+        "main": "apps/react-clean/src/main.tsx",
+        "polyfills": "apps/react-clean/src/polyfills.ts",
+        "tsConfig": "apps/react-clean/tsconfig.app.json",
+        "assets": [
+          "apps/react-clean/src/favicon.ico",
+          "apps/react-clean/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/react-clean/src/environments/environment.ts",
+              "with": "apps/react-clean/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "react-clean:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "react-clean:build:development"
+        },
+        "production": {
+          "buildTarget": "react-clean:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/react-clean/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/react-clean"],
+      "options": {
+        "jestConfig": "apps/react-clean/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["react", "app"]
+}
