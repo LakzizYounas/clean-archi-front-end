@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useCounterViewModel } from '@clean-archi-front-end/counter/controller-react';
-import { useCounterStoreImplementation } from '../storage/counter.store-implementation';
+import { useCounterStoreImplementation } from '../storage/counter-state.store-implementation';
 
 export const CounterView = () => {
   const store = useCounterStoreImplementation();
