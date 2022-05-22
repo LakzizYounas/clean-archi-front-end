@@ -1,0 +1,43 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/react-clean/storage/src",
+  "projectType": "library",
+  "tags": ["react"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/react-clean/storage",
+        "tsConfig": "libs/react-clean/storage/tsconfig.lib.json",
+        "project": "libs/react-clean/storage/package.json",
+        "entryFile": "libs/react-clean/storage/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/react-clean/storage/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/react-clean/storage/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/react-clean/storage"],
+      "options": {
+        "jestConfig": "libs/react-clean/storage/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { CounterStore } from '@clean-archi-front-end/counter/domain';
+import { Reducer } from '@reduxjs/toolkit';
 
 import { CounterActionTypes, CounterAction } from './counter.action-types';
 
@@ -13,7 +14,7 @@ const INITIAL_STATE: CounterStoreState = {
   isUpdating: false,
 };
 
-export const counterReducer = (
+export const counterReducer: Reducer = (
   state: CounterStoreState = INITIAL_STATE,
   action: CounterAction
 ) => {

@@ -11,3 +11,8 @@ export interface CounterStore {
   setCounter(counter: Counter): void;
   updateCounter(counter: Counter): Promise<Counter | undefined>;
 }
+
+export type CounterStoreState = Pick<
+  CounterStore,
+  'counter' | 'isLoading' | 'isUpdating'
+>;
