@@ -12,12 +12,13 @@ import {
   setCounterAction,
   updateCounterAction,
 } from './counter.action';
+import { AppRootState } from '@clean-archi-front-end/react-clean/storage';
 
-export const useCounterStoreImplementation = (
-  counterSelector: (state: unknown) => CounterStoreState
-): CounterStore => {
+const counterSelector = (state: AppRootState) => state.counter;
+
+export const useCounterStoreImplementation = (): CounterStore => {
   const { counter, isLoading, isUpdating } = useSelector<
-    unknown,
+    AppRootState,
     CounterStoreState
   >(counterSelector);
   const dispatch = useDispatch();
