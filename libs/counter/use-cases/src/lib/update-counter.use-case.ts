@@ -5,25 +5,6 @@ export type UpdateCounterStore = Pick<
   'counter' | 'updateCounter' | 'setCounter'
 >;
 
-const debounce = <F extends (...args: any[]) => any>(
-  func: F,
-  waitFor: number
-) => {
-  let timeout: ReturnType<typeof setTimeout> | null = null;
-
-  const debounced = (...args: Parameters<F>) => {
-    if (timeout !== null) {
-      clearTimeout(timeout);
-      timeout = null;
-    }
-    timeout = setTimeout(() => func(...args), waitFor);
-  };
-
-  return debounced as (...args: Parameters<F>) => ReturnType<F>;
-};
-
-const debouncedTask = debounce((task) => Promise.resolve(task()), 500);
-
 export const updateCounterUseCase = (
   store: UpdateCounterStore,
   updateBy: (counter: Counter) => Counter
@@ -37,5 +18,5 @@ export const updateCounterUseCase = (
   }
 
   store.setCounter(updatedCounter);
-  return debouncedTask(() => store.updateCounter(updatedCounter));
+  return store.updateCounter(updatedCounter);
 };
