@@ -5,6 +5,7 @@
     "counter-controller-react": "libs/counter/controller-react",
     "counter-domain": "libs/counter/domain",
     "counter-ui-react": "libs/counter/ui-react",
+    "counter-ui-vue": "libs/counter/ui-vue",
     "counter-use-cases": "libs/counter/use-cases",
     "react-clean": "apps/react-clean",
     "vue-clean": "apps/vue-clean"

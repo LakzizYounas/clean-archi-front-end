@@ -24,6 +24,9 @@
       "@clean-archi-front-end/counter/ui-react": [
         "libs/counter/ui-react/src/index.ts"
       ],
+      "@clean-archi-front-end/counter/ui-vue": [
+        "libs/counter/ui-vue/src/index.ts"
+      ],
       "@clean-archi-front-end/counter/use-cases": [
         "libs/counter/use-cases/src/index.ts"
       ]

@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Counter from './components/Counter.vue';
+import { Counter } from '@clean-archi-front-end/counter/ui-vue';
 
 export default defineComponent({
   name: 'App',
