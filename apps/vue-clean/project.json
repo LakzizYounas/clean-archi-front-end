@@ -1,0 +1,54 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/vue-clean/src",
+  "targets": {
+    "build": {
+      "executor": "@nx-plus/vue:browser",
+      "options": {
+        "dest": "dist/apps/vue-clean",
+        "index": "apps/vue-clean/public/index.html",
+        "main": "apps/vue-clean/src/main.ts",
+        "tsConfig": "apps/vue-clean/tsconfig.app.json"
+      },
+      "configurations": {
+        "production": {
+          "mode": "production",
+          "filenameHashing": true,
+          "productionSourceMap": true,
+          "css": {
+            "extract": true,
+            "sourceMap": false
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx-plus/vue:dev-server",
+      "options": {
+        "browserTarget": "vue-clean:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "vue-clean:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/vue-clean/**/*.{ts,tsx,vue}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/vue-clean"],
+      "options": {
+        "jestConfig": "apps/vue-clean/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["vue", "app"]
+}

@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "postinstall": "node node_modules/@nx-plus/vue/patch-nx-dep-graph.js"
   },
   "private": true,
   "devDependencies": {
@@ -18,6 +19,7 @@
     "@nrwl/react": "^14.1.7",
     "@nrwl/web": "14.1.7",
     "@nrwl/workspace": "14.1.7",
+    "@nx-plus/vue": "^14.0.0",
     "@testing-library/react": "13.1.1",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
@@ -25,27 +27,39 @@
     "@types/react-dom": "18.0.3",
     "@typescript-eslint/eslint-plugin": "~5.18.0",
     "@typescript-eslint/parser": "~5.18.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^2.0.0-0",
     "babel-jest": "27.5.1",
     "cypress": "^9.1.0",
     "eslint": "~8.12.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
+    "eslint-plugin-vue": "^7.0.0-0",
     "jest": "27.5.1",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
     "nx": "14.1.7",
     "prettier": "^2.5.1",
     "react-test-renderer": "18.1.0",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
-    "typescript": "~4.6.2"
+    "typescript": "~4.6.2",
+    "vue3-jest": "^27.0.0-alpha.1"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "regenerator-runtime": "0.13.7",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "vue": "^3.0.0"
   }
 }

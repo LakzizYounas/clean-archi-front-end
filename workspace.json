@@ -6,6 +6,7 @@
     "counter-domain": "libs/counter/domain",
     "counter-ui-react": "libs/counter/ui-react",
     "counter-use-cases": "libs/counter/use-cases",
-    "react-clean": "apps/react-clean"
+    "react-clean": "apps/react-clean",
+    "vue-clean": "apps/vue-clean"
   }
 }
