@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 
 import { Counter } from '@clean-archi-front-end/counter/domain';
+// TODO move those functions in a counter service library
 import {
   updateCounter,
   getCounter,
